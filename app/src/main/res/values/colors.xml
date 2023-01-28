@@ -10,7 +10,11 @@
     <color name="progressDone">#127369</color>
     <color name="progressError">#732002</color>
     <color name="colorSecondary">#D98014</color>
-    <color name="background">#F2EDDC</color>
+    <color name="colorSecondaryDark">#893E01</color>
+    <color name="background">#F1F3F5</color>
     <color name="colorMain">#323E40</color>
     <color name="darkGreen">#10403B</color>
+    <color name="lightGreen">#38b99e</color>
+    <color name="lightBlue">#46b1e0</color>
+    <color name="gray">#7d7d7d</color>
 </resources>
