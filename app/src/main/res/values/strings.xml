@@ -10,4 +10,5 @@
     <string name="name">Name</string>
     <string name="dose">Dose</string>
     <string name="strength">Strength</string>
+    <string name="failed_to_get_data">Failed to fetch data</string>
 </resources>

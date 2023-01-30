@@ -5,11 +5,19 @@
 
     <data>
 
+        <variable
+            name="drug"
+            type="com.example.arlibappstest.domain.Drug" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:contentPadding="4dp">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,11 +29,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/name"
-                app:layout_constraintHorizontal_weight="1"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvName"
                 app:layout_constraintEnd_toStartOf="@+id/tvName"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvName" />
 
@@ -33,13 +41,14 @@
                 android:id="@+id/tvName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintHorizontal_weight="2"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:text="@{drug.name}"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvDose"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintStart_toEndOf="@+id/materialTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Name" />
@@ -49,11 +58,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/dose"
-                app:layout_constraintHorizontal_weight="1"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvDose"
                 app:layout_constraintEnd_toStartOf="@+id/tvDose"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="@+id/materialTextView"
                 app:layout_constraintTop_toTopOf="@+id/tvDose" />
 
@@ -62,11 +71,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="@{drug.dose}"
                 android:textSize="20sp"
-                app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintBottom_toTopOf="@+id/tvStrength"
                 app:layout_constraintEnd_toEndOf="@+id/tvName"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintStart_toEndOf="@+id/materialTextView2"
                 app:layout_constraintTop_toBottomOf="@+id/tvName"
                 tools:text="Dose" />
@@ -74,13 +84,13 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/materialTextView3"
                 android:layout_width="0dp"
-                app:layout_constraintHorizontal_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/strength"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvStrength"
                 app:layout_constraintEnd_toStartOf="@+id/tvStrength"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="@+id/materialTextView2"
                 app:layout_constraintTop_toTopOf="@+id/tvStrength" />
 
@@ -90,11 +100,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintHorizontal_weight="2"
+                android:text="@{drug.strength}"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvDose"
                 app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintStart_toEndOf="@+id/materialTextView3"
                 app:layout_constraintTop_toBottomOf="@+id/tvDose"
                 tools:text="500mg" />

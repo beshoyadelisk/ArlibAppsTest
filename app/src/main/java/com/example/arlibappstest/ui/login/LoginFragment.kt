@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.arlibappstest.ArlibApp
 import com.example.arlibappstest.R
 import com.example.arlibappstest.databinding.FragmentLoginBinding
 import com.example.arlibappstest.util.FragmentExt.showToast
@@ -34,7 +36,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.uiState.collectWhileResumed(viewLifecycleOwner, ::handleUiState)
         viewModel.currentUser.collectWhileResumed(viewLifecycleOwner) {
-
+            ArlibApp.currentUser = it
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
         }
     }
 
