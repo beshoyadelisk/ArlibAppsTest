@@ -33,6 +33,8 @@ class LoginViewModel @Inject constructor(
         } else {
             viewModelScope.launch(dispatcher) {
                 userRepository.login(username.value, password.value)
+                    .onStart { emit(Resource.Loading(true)) }
+                    .onCompletion { emit(Resource.Loading(false)) }
                     .collect { resource ->
                         when (resource) {
                             is Resource.Error -> _uiState.update { it.copy(userMessage = resource.message) }
