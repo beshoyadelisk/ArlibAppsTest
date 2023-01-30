@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvItems.adapter = adapter
+        binding.btnRefresh.setOnClickListener { viewModel.loadMedicines(true) }
         viewModel.uiState.collectWhileResumed(viewLifecycleOwner, ::handleUiState)
     }
 

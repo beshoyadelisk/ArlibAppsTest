@@ -59,9 +59,9 @@ class HomeViewModel @Inject constructor(
         return cal.get(Calendar.HOUR_OF_DAY)
     }
 
-    private fun loadMedicines() {
+     fun loadMedicines(isRefresh:Boolean = false) {
         viewModelScope.launch(Dispatchers.IO) {
-            medicinesRepository.getMedicines().collect { resource ->
+            medicinesRepository.getMedicines(isRefresh).collect { resource ->
                 when (resource) {
                     is Resource.Error -> {
                         _uiState.update { HomeUiState.ErrorState(messageId = resource.message) }
